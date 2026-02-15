@@ -75,3 +75,91 @@ function multiplicar(numA: number, numB: number): number {
 
 // console.log(multiplicar(2, 'Rafa'))
 console.log(multiplicar(4.7, 9))
+
+// tipo função
+// exemplo sem o tipo função
+// let calculo
+// calculo = digaOi
+// calculo()
+
+// calculo = multiplicar
+// console.log(calculo(5, 6))
+
+// Definindo tipo função
+
+let calculo: (x: number, y: number) => number
+calculo = multiplicar
+console.log(calculo(5, 6))
+
+// objetos
+let usuario: { nome: string, idade: number } = {
+  nome: 'Rafaela',
+  idade: 28
+}
+
+console.log(usuario)
+// usuario = {} erro
+
+// usuario = { erro
+//   name: 'Raimison'
+//   age: 39
+// }
+
+usuario = {
+  idade: 29,
+  nome: 'Daiana'
+}
+
+console.log(usuario)
+
+// Desafio
+/*Criar um objeto funcionário com:
+- Array de strings com os nomes dos surpevisores
+- Função de bater ponto que recebe a hora (número) 
+            e retorna uma string
+            -> Ponto normal (<= 8)
+            -> Fora do horário (> 8)
+*/
+// Alias
+type Funcionario = {
+  supervisores: string[],
+  baterPonto: (horas: number) => string
+}
+
+let funcionaio: Funcionario = {
+  supervisores: ['Rafaela', 'Daina'],
+  baterPonto(horario: number): string {
+    if (horario <= 8) {
+      return 'Ponto normal.'
+    } else {
+      return 'Fora do horário!'
+    }
+  }
+}
+
+let funcionaio2: Funcionario = {
+  supervisores: ['Raimison', 'Lima'],
+  baterPonto(horario: number): string {
+    if (horario <= 8) {
+      return 'Ponto normal.'
+    } else {
+      return 'Fora do horário!'
+    }
+  }
+}
+
+console.log(funcionaio.supervisores)
+console.log(funcionaio.baterPonto(8))
+console.log(funcionaio.baterPonto(9))
+
+console.log(funcionaio2.supervisores)
+console.log(funcionaio2.baterPonto(8))
+console.log(funcionaio2.baterPonto(9))
+
+console.log(typeof funcionaio)
+
+// Union Types
+let nota: number | string = 10
+console.log(`Minha nota é ${nota}`);
+nota = 'Dez'
+console.log(`Minha nota é ${nota}`);

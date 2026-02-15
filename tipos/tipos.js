@@ -60,3 +60,64 @@ function multiplicar(numA, numB) {
 }
 // console.log(multiplicar(2, 'Rafa'))
 console.log(multiplicar(4.7, 9));
+// tipo função
+// exemplo sem o tipo função
+// let calculo
+// calculo = digaOi
+// calculo()
+// calculo = multiplicar
+// console.log(calculo(5, 6))
+// Definindo tipo função
+let calculo;
+calculo = multiplicar;
+console.log(calculo(5, 6));
+// objetos
+let usuario = {
+    nome: 'Rafaela',
+    idade: 28
+};
+console.log(usuario);
+// usuario = {} erro
+// usuario = { erro
+//   name: 'Raimison'
+//   age: 39
+// }
+usuario = {
+    idade: 29,
+    nome: 'Daiana'
+};
+console.log(usuario);
+let funcionaio = {
+    supervisores: ['Rafaela', 'Daina'],
+    baterPonto(horario) {
+        if (horario <= 8) {
+            return 'Ponto normal.';
+        }
+        else {
+            return 'Fora do horário!';
+        }
+    }
+};
+let funcionaio2 = {
+    supervisores: ['Raimison', 'Lima'],
+    baterPonto(horario) {
+        if (horario <= 8) {
+            return 'Ponto normal.';
+        }
+        else {
+            return 'Fora do horário!';
+        }
+    }
+};
+console.log(funcionaio.supervisores);
+console.log(funcionaio.baterPonto(8));
+console.log(funcionaio.baterPonto(9));
+console.log(funcionaio2.supervisores);
+console.log(funcionaio2.baterPonto(8));
+console.log(funcionaio2.baterPonto(9));
+console.log(typeof funcionaio);
+// Union Types
+let nota = 10;
+console.log(`Minha nota é ${nota}`);
+nota = 'Dez';
+console.log(`Minha nota é ${nota}`);
