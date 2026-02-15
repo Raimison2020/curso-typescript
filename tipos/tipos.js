@@ -28,3 +28,35 @@ console.log(hobbies);
 let endereco = ["Av Principal", 99, ""];
 console.log(endereco);
 endereco = ["Rua Importante", 1260, "Bloco A"];
+console.log(endereco);
+// enums
+var Cor;
+(function (Cor) {
+    Cor[Cor["Cinza"] = 0] = "Cinza";
+    Cor[Cor["Verde"] = 1] = "Verde";
+    Cor[Cor["Azul"] = 2] = "Azul";
+})(Cor || (Cor = {}));
+let minhCor = Cor.Verde;
+console.log(minhCor);
+// any
+let carro = 'BMW';
+console.log(carro);
+carro = { marca: 'BMW', ano: 2013 };
+console.log(carro);
+console.log(typeof carro);
+// funções
+function retornaMeuNome() {
+    // return minhaIdade
+    return nome;
+}
+console.log(retornaMeuNome());
+function digaOi() {
+    console.log('Oi');
+    // return minhaIdade
+}
+digaOi();
+function multiplicar(numA, numB) {
+    return numA * numB;
+}
+// console.log(multiplicar(2, 'Rafa'))
+console.log(multiplicar(4.7, 9));
