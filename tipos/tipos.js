@@ -121,3 +121,46 @@ let nota = 10;
 console.log(`Minha nota é ${nota}`);
 nota = 'Dez';
 console.log(`Minha nota é ${nota}`);
+// Checando tipos
+let valor = 30;
+if (typeof valor === 'number') {
+    console.log('É um number!');
+}
+else {
+    console.log(typeof valor);
+}
+// tipo never
+function falha(msg) {
+    throw new Error(msg);
+}
+const produto = {
+    nome: 'Sabão',
+    preco: 1,
+    validarProduto() {
+        if (!this.nome || this.nome.trim().length == 0) {
+            falha('Precisa ter um nome');
+        }
+        if (this.preco <= 0) {
+            falha('Preço inválido');
+        }
+    }
+};
+produto.validarProduto();
+// tipo null
+let altura = 12;
+// altura = null
+let alturaOpcional = 12;
+alturaOpcional = null;
+const contato1 = {
+    nome: 'Rafaela',
+    tel1: '98765432',
+    tel2: null
+};
+console.log(contato1.nome);
+console.log(contato1.tel1);
+console.log(contato1.tel2);
+let podeSerNulo = null;
+podeSerNulo = 12;
+console.log(podeSerNulo);
+podeSerNulo = 'abc';
+console.log(podeSerNulo);
